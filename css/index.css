@@ -1,0 +1,853 @@
+/* 中间视频区域 */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+/* 定义第一个导航键文字常亮 */
+.title_list:first-child {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+/* 定义导航键指示矩形 */
+.title_list_show {
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    background-color: rgb(105, 224, 255);
+    transition: all 0.2s ease-in-out 0s;
+    ;
+}
+
+/* 定义鼠标悬停时导航键矩形的移动 */
+.title_list:nth-child(2):hover~.title_list_show {
+    left: 130px;
+}
+
+.title_list:nth-child(3):hover~.title_list_show {
+    left: 230px;
+}
+
+.title_list:nth-child(4):hover~.title_list_show {
+    left: 330px;
+}
+
+.title_list:nth-child(5):hover~.title_list_show {
+    left: 430px;
+}
+
+.title_list:nth-child(6):hover~.title_list_show {
+    left: 530px;
+}
+
+
+/* 定义中间视频区域大盒子 */
+.body_centent {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* 定义中间视频盒子 */
+.body_video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* 定义七圣召唤盒子 */
+.cards {
+    cursor: pointer;
+    width: 161px;
+    height: 152px;
+    position: absolute;
+    right: 33px;
+    top: 78px;
+}
+
+/* 定义12+游戏标志盒子 */
+.age-appropriate {
+    width: 100px;
+    height: 130px;
+    left: 20px;
+    bottom: 24px;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* 定义中间控件区域盒子 */
+.body_control {
+    width: 540px;
+    height: 285px;
+    bottom: 12px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 定义视频播放控制区域盒子 */
+.control_play {
+    width: 100%;
+    height: 76px;
+    background: url(../images/play-boeder.png) center no-repeat;
+}
+
+/* 定义视频播放控制按钮盒子 */
+.control_play_btn {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    margin: 14px auto;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+/* 定义视频播放控制按钮盒子里的图片 */
+.control_play_btn::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../images/play2.png);
+    background-position: center top;
+    position: absolute;
+}
+
+/* 定义鼠标悬停时按钮更换显示效果 */
+.control_play_btn:hover {
+    /* transparent 代表着全透明黑色，即一个类似rgba(0,0,0,0)这样的值 */
+    /* 如果一个元素覆盖在另外一个元素之上，而你想显示下面的元素，
+    这时你就需要把上面这个元素的background设置为transparent */
+    background: transparent;
+}
+
+.control_play_btn:hover::before {
+    content: "";
+    background-position: center bottom;
+}
+
+/* 定义下载区域盒子 */
+.control_download {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 定义二维码下载盒子 */
+.download_qr {
+    height: 102px;
+    width: 102px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-right: 5px;
+    position: relative;
+}
+
+/* 定义二维码内的logo */
+.download_qr_icon {
+    width: 30px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    border: 2px solid #475e7d;
+    border-radius: 4px;
+}
+
+/* 定义二维码内的码图 */
+.download_qr_code {
+    width: 100%;
+    height: 100%;
+}
+
+/* ps4、ios、taptap和android下载端盒子 */
+.download-boxes {
+    width: 320px;
+    display: flex;
+    /* 允许换行 */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 3px 0;
+}
+
+/* 各个下载框的盒子 */
+.download-box {
+    width: 160px;
+    height: 54px;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+/* 各个下载框盒子的背景 */
+.download-box:nth-child(1) {
+    background-image: url(../images/ps4-1.png);
+}
+
+.download-box:nth-child(2) {
+    background-image: url(../images/tap-1.png);
+}
+
+.download-box:nth-child(3) {
+    background-image: url(../images/ios-1.png);
+}
+
+.download-box:nth-child(4) {
+    background-image: url(../images/android-1.png);
+}
+
+/* 定义鼠标悬浮各个下载框时改变背景图片 */
+.download-box:nth-child(1):hover {
+    background-image: url(../images/ps4-2.png);
+}
+
+.download-box:nth-child(2):hover {
+    background-image: url(../images/tap-2.png);
+}
+
+.download-box:nth-child(3):hover {
+    background-image: url(../images/ios-2.png);
+}
+
+.download-box:nth-child(4):hover {
+    background-image: url(../images/android-2.png);
+}
+
+/* 定义PC端下载盒子 */
+.download_pc {
+    width: 111px;
+    height: 111px;
+    right: 0;
+    display: block;
+    cursor: pointer;
+}
+
+/* 定义PC端下载盒子内图片属性 */
+.download_pc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.download_pc :first-child {
+    display: block;
+}
+
+.download_pc :last-child {
+    display: none;
+}
+
+/* 定义鼠标悬停时，PC下载盒子的图片的更换 */
+.download_pc:hover :last-child {
+    display: block;
+}
+
+.download_pc:hover :first-child {
+    display: none;
+}
+
+/* 定义滑动箭头盒子 */
+.control_arrows {
+    width: 25px;
+    height: 45px;
+}
+
+/* 定义三个箭头盒子 */
+.arrow {
+    height: 15px;
+    background-image: url(../images/down.png);
+    /* 创建动画 */
+    animation-name: arrow;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.arrow:nth-child(1) {
+    top: 0;
+    animation-delay: 0s;
+}
+
+.arrow:nth-child(2) {
+    top: 12px;
+    animation-delay: 0.5s;
+}
+
+.arrow:nth-child(3) {
+    top: 24px;
+    animation-delay: 1s;
+}
+
+/* 设置动画效果 */
+@keyframes arrow {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+/* 定义新闻资讯区域盒子 */
+.News {
+    width: 100%;
+    height: 910px;
+    background: url(../images/bg3.jpg) center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 定义新闻资讯标题盒子 */
+.News_Title {
+    margin: 183px auto 60px;
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+}
+
+/* 定义资讯标题的两边的箭头 */
+.News_Title::before,
+.News_Title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 385px;
+    height: 14px;
+    background: url(../images/箭头（左）.png) no-repeat right center/cover;
+}
+
+.News_Title::before {
+    left: 0;
+    transform: translate(calc(-100% - 32px), -50%)
+}
+
+.News_Title::after {
+    right: 0;
+    transform: translate(calc(100% + 32px), -50%) rotateY(180deg);
+}
+
+
+/* 定义新闻内容盒子 */
+.News_content {
+    bottom: 191px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 轮播图 */
+.News_imgs {
+    width: 640px;
+    height: 100%;
+    background-color: #69e0ff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 轮播图下的四个圆形标志 */
+.rount {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin: 0 4px;
+    border: 2px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* 定义鼠标悬停时，圆形标志突出显示 */
+.rount:hover {
+    background-color: #fff;
+}
+
+/* 定义轮播图图片盒子 */
+.imgs {
+    width: 400%;
+    height: 100%;
+    left: 0;
+    display: flex;
+    position: absolute;
+    transition: all 0.2s linear;
+}
+.imgs li {
+    width: 25%;
+    height: 100%;
+}
+.imgs img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 定义鼠标悬停，图片移动效果 */
+.rount:nth-child(2):hover~.imgs {
+    transform: translateX(-640px);
+}
+.rount:nth-child(3):hover~.imgs {
+    transform: translateX(-1280px);
+}
+.rount:nth-child(4):hover~.imgs {
+    transform: translateX(-1920px);
+}
+
+/* 定义新闻列表内容盒子 */
+.News_Lists {
+    width: 640px;
+    background: rgba(38, 18, 12, 0.62);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #fff;
+}
+
+/* 定义新闻列表内容主体盒子 */
+.News_Lists_box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 28px 24px 0 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 定义新闻列表内容盒子 */
+.News_Content {
+    width: 100%;
+    height: 260px;
+    font-size: 16px;
+}
+
+.News_List {
+    width: 400%;
+    height: 260px;
+    display: flex;
+    border-top: 3px solid rgba(255, 255, 255, 0.1);
+}
+.News_List li {
+    width: 25%
+}
+
+/* 定义鼠标悬停时列表框背景颜色改变 */
+.News_List_content:hover {
+    background: rgba(255, 212, 159, 0.06);
+}
+
+.News_List_content {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+    padding: 0 8px 0 16px;
+    cursor: pointer;
+}
+
+
+.message {
+    width: 480px;
+    /* 不允许换行 */
+    white-space: nowrap;
+    /* 移除隐藏 */
+    overflow: hidden;
+    /* 超出文本用省略号显示 */
+    text-overflow: ellipsis;
+    font-size: 16px;
+    padding-right: 26px;
+}
+
+.data {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 14px;
+}
+
+/* 定义新闻标题选项盒子 */
+.News_Choose {
+    width: 74px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 46px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* 定义第一个新闻标题选项颜色突出显示 */
+.News_Choose:nth-child(1) {
+    color: #ffd49f;
+}
+
+/* 定义新闻标题选项上的矩形显示 */
+.choose_line {
+    position: absolute;
+    top: 50px;
+    width: 74px;
+    height: 3px;
+    background: #ffd49f;
+    transition: all 10ms ease-in-out 0s;
+}
+
+/* 定义鼠标悬停内容更换和突出显示 */
+.News_Choose:nth-child(2):hover~.News_Content {
+    transform: translateX(-592px);
+}
+
+.News_Choose:nth-child(3):hover~.News_Content {
+    transform: translateX(-1184px);
+}
+
+.News_Choose:nth-child(4):hover~.News_Content {
+    transform: translateX(-1776px);
+}
+.News_Choose:nth-child(2):hover~.choose_line {
+    left: 74px;
+}
+
+.News_Choose:nth-child(3):hover~.choose_line {
+    left: 148px;
+}
+
+.News_Choose:nth-child(4):hover~.choose_line {
+    left: 222px;
+}
+.News_Choose:hover {
+    color: #ffd49f;
+}
+
+
+/* 定义更多新闻资讯盒子 */
+.more_news {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: right;
+}
+
+/* 更多新闻资讯按钮 */
+.more_news_btn {
+    width: 146px;
+    height: 50px;
+    margin-right: 32px;
+    text-align: right;
+    line-height: 50px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.75);
+    background: url(../images/加载.png) no-repeat left center/22px;
+    cursor: pointer;
+}
+
+.more_news_btn:hover {
+    color: rgba(255, 212, 159, 0.75);
+    background-image: url(../images/加载2.png);
+}
+
+
+
+
+
+/* 定义城市区域盒子 */
+.Citys {
+    width: 100%;
+}
+
+.Citys_list {
+    overflow: hidden;
+}
+
+/* 定义每个城市盒子的高度和隐藏溢出 */
+.city {
+    display: flex;
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    cursor: pointer;
+    background-size: 1920px 260px;
+}
+
+/* 定义每个城市的遮罩层 */
+.city::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+/* 定义鼠标悬停城市盒子上时移除阴影效果 */
+.city:hover::before {
+    background: rgba(0, 0, 0, .2);
+}
+
+/* 定义每个城市的背景图片 */
+.city_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s 0s ease-out;
+}
+
+/* 定义每个城市的名称 */
+.city_name, .city_name p {
+    position: absolute;
+    width: 100%;
+    height: 260px;
+    font-size: 36px;
+    color: #fff;
+    line-height: 260px;
+    background: url(../images/中心.png) center no-repeat;
+    background-size: 132px;
+    text-align: center;
+    text-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    margin: 0;
+    z-index: 3;
+}
+
+/* 定义鼠标悬停时图片放大 */
+.city:hover .city_img {
+    transform: scale(1.05);
+}
+
+/* 定义城市名下的向下的箭头 */
+.city_name::after {
+    opacity: 0;
+    content: "";
+    width: 210px;
+    height: 10px;
+    bottom: 91px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background: url(../images/箭头（下）.png);
+}
+
+/* 定义鼠标悬停时的向下箭头 */
+.city:hover .city_name::after {
+    opacity: 1;
+}
+
+/* 鼠标悬停时应该显示人物和边框 */
+.city_humen {
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 260px;
+    position: absolute;
+    border: #fff solid 6px;
+    transition: all 0.2s 0s ease-in;
+    background-repeat: no-repeat;
+    background-position: calc(50% + 360px) 50%;
+    background-size: 960px 260px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+/* 各个城市鼠标悬停时应显示的人物 */
+.human_Mondstadt {
+    background-image: url(../images/琴.png);
+}
+
+.human_LiYue {
+    background-image: url(../images/魈.png);
+}
+
+.human_Lnazuma {
+    background-image: url(../images/神里.png);
+}
+
+.human_Sumeru {
+    background-image: url(../images/提纳里.png);
+}
+
+
+/* 各个城市鼠标悬停时显示出人物和边框 */
+.city:hover .city_humen {
+    opacity: 1;
+}
+
+/* 更多未开放城市盒子 */
+.more-city {
+    pointer-events: none;
+    background-image: url(../images/more-city.jpg);
+}
+
+/* 更多未开放城市的阴暗效果 */
+.more-city::before {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 260px;
+    display: block;
+    content: "";
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/* 更多未开放城市文字盒子 */
+.name_more_city {
+    width: 100%;
+    height: 260px;
+    font-size: 36px;
+    color: rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.3) !important;
+    line-height: 260px;
+    background-size: 132px;
+    text-align: center;
+    text-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    margin: 0;
+    z-index: 3;
+}
+
+
+/* 定义侧边小框盒子 */
+.Social {
+    width: 208px;
+    right: -178px;
+    top: 50%;
+    transform: translate(0, -50%);
+    position: fixed;
+    z-index: 999;
+}
+.social {
+    right: 0;
+    display: flex;
+    float: right;
+}
+
+/* 定义侧边小框的内容 */
+.social_lists {
+    position: relative;
+    width: 178px;
+    padding-bottom: 10px;
+    background: rgba(255,255,255,0.9);
+    transition: all 0.5s ease-out;
+}
+
+/* 定义内容第一部分 */
+.social_list_more {
+    font-size: 18px;
+    height: 268px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social_list_more span:first-child {
+    margin-top: 23px;
+}
+
+.social_list_more span:last-child {
+    font-size: 16px;
+}
+
+.social_list_more img {
+    width: 147px;
+    height: 147px;
+    margin: 29px auto 14px;
+}
+
+/* 定义内容其他部分 */
+.social_list {
+    height: 44px;
+    cursor: pointer;
+}
+
+.social_list_message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 21px;
+    min-height: 44px;
+    color: #333;
+}
+
+.social_list_message_img {
+    font-family: 'icomoon';
+    font-size: 30px;
+}
+
+.img_1::before {
+    content: "\65";
+}
+
+.img_2::before {
+    content: "\62";
+}
+
+.img_3::before {
+    content: "\64";
+}
+
+/* 定义鼠标悬浮时效果显示 */
+.social_list_message:hover {
+    background: #333;
+    color: #ffd49f;
+}
+
+
+/* 定义侧边小框的按钮 */
+.social_btn {
+    width: 30px;
+    left: 0;
+    top: 10px;
+    position: absolute;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+.social .social_btn::before {
+    content: "";
+    width: 12px;
+    height: 18px;
+    display: block;
+    margin: auto;
+    background: url(../images/arrow_left_side.png) no-repeat center/cover;
+    transform: rotate(-180deg);
+    transition: transform 0.5s ease;
+}
+
+/* 定义鼠标悬停按钮时，侧边小框右移，且按钮内图片翻转180度 */
+.social_btn:focus+.social_lists {
+    transform: translateX(-178px);
+}
+.social_btn:focus {
+    transform: translateX(-178px);
+}
+.social .social_btn:focus::before {
+    transform: rotate(0);
+}
+
+
