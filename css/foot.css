@@ -1,0 +1,242 @@
+/* 定义页脚区域的大盒子 */
+.footer {
+    width: 100%;
+    height: 430px;
+    background-color: #111111;
+}
+
+/* 定义社交分享区域盒子 */
+.footer_socialbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+/* 定义社交分享四个软件盒子 */
+.footer_socialbar li {
+    width: 32px;
+    height: 32px;
+    margin-right: 34px;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.footer_socialbar li:last-child {
+    margin-right: 0;
+    position: relative;
+}
+
+/* 定义四个分享盒子的背景 */
+.footer_socialitem_weibo {
+    background: url(../images/weibo.png) center/cover;
+}
+.footer_socialitem_wechat {
+    background: url(../images/wechat.png) center/cover;
+}
+.footer_socialitem_qq {
+    background: url(../images/qq.png) center/cover;
+}
+.footer_socialitem {
+    background: url(../images/share.png) center/cover;
+}
+
+/* 定义鼠标悬停时图标亮度提高 */
+.footer_socialbar li:hover {
+    opacity: 1;
+}
+
+
+
+/* 定义鼠标未悬停分享选项时隐藏的区域 */
+.footer_socialitem_content::after {
+    content: "";
+    width: 0;
+    height: 0;
+    top: -24px;
+    right: 10px;
+    border: 12px solid transparent;
+    border-bottom: 12px solid #3d3d3d;
+    position: absolute;
+}
+.footer_socialitem_content {
+    display: none;
+    width: 304px;
+    height: 120px;
+    position: absolute;
+    background-color: #3d3d3d;;
+    top: 54px;
+    border-radius: 6px;
+    right: -6px;
+}
+
+/* 定义鼠标悬停分享选项时显示隐藏的区域 */
+.footer_socialitem:hover .footer_socialitem_content {
+    display: block;
+}
+.footer_socialitem:hover ::after {
+    display: block;
+}
+
+/* 定义定义鼠标未悬停分享选项时隐藏的区域里的内容 */
+.content_name {
+    margin-top: 13px;
+    font-size: 18px;
+    color: #ccc;
+    text-align: center;
+}
+
+.content_way {
+    margin: 21px auto 24px;
+    width: 240px;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content_way_img {
+    width: 44px;
+    height: 44px;
+    opacity: .9;
+    border-radius: 50%;
+    background: url(../images/share-way.png);
+}
+
+.content_way_img:nth-child(1) {
+    background-position: -74px -74px;
+}
+.content_way_img:nth-child(2){
+    background-position: -74px -10px;
+}
+.content_way_img:nth-child(3){
+    background-position: -138px -138px;
+}
+.content_way_img:nth-child(4){
+     background-position: -10px -138px;
+}
+
+/* 定义鼠标悬停分享内容内图标时常亮 */
+.content_way_img:hover {
+    opacity: 1;
+}
+
+
+
+
+
+/* 定义页脚文字区域 */
+.footer_top {
+    margin: 0 auto;
+    width: 1280px;
+    height: 343px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* 定义页脚文字区域的logo盒子 */
+.footer_top_logo {
+    width: 268px;
+    height: 68px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 定义两个logo盒子 */
+.top_logo_1 {
+    width: 118px;
+    height: 42px;
+    margin-right: 26px;
+}
+
+.top_logo_2 {
+    width: 87px;
+    margin-left: 34px;
+}
+
+/* 定义两个logo之间的分隔线 */
+.top_line {
+    width: 1px;
+    height: 28px;
+    background: #666;
+}
+
+
+/* 定义页脚文字区域的内容和盒子 */
+.footer_top_content {
+    width: 882px;
+    height: 268px;
+    margin-left: 82px;
+}
+
+/* 定义内容信息标题 */
+.content_title {
+    display: flex;
+    height: 15px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 15px;
+}
+
+.content_title_line {
+    width: 1px;
+    height: 15px;
+    background-color: #fff;
+    margin: 0 11px 0 9px;
+}
+
+.content_title_text {
+    cursor: pointer;
+}
+
+/* 定义中间审批信息 */
+.content_text {
+    width: 100%;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #aaa;
+    line-height: 24px;
+}
+
+/* 定义国家备案经营许可信息盒子 */
+.content_text_message_1 {
+    display: flex;
+    line-height: 24px;
+}
+
+.message_1_line {
+    margin: 0 10px 0 10px;
+}
+
+.content_text_message_1 p:first-child {
+    cursor: pointer;
+}
+
+.message_1:hover {
+    color: #fff;
+}
+
+/* 定义米哈游信息盒子 */
+.content_text_message_2 {
+    display: flex;
+    line-height: 24px;
+}
+
+.content_text_message_2 p {
+    margin-right: 26px;
+}
+
+/* 定义页脚下方的营业资格框 */
+.content_icon {
+    display: flex;
+    height: 46px;
+}
+.content_icon_img {
+    margin-right: 15px;
+    cursor: pointer;
+}

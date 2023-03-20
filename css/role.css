@@ -1,0 +1,517 @@
+/* 定义角色导航键文字常亮 */
+.title_list:nth-child(3) {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+/* 定义导航键指示矩形 */
+.title_list_show {
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 230px;
+    background-color: rgb(105, 224, 255);
+    transition: all 0.2s ease-in-out 0s;
+    ;
+}
+
+/* 定义鼠标悬停时导航键矩形的移动 */
+.title_list:nth-child(1):hover~.title_list_show {
+    left: 30px;
+}
+
+.title_list:nth-child(2):hover~.title_list_show {
+    left: 130px;
+}
+
+.title_list:nth-child(4):hover~.title_list_show {
+    left: 330px;
+}
+
+.title_list:nth-child(5):hover~.title_list_show {
+    left: 430px;
+}
+
+.title_list:nth-child(6):hover~.title_list_show {
+    left: 530px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+/* 定义角色页面盒子 */
+.role {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.role_citys {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* 定义蒙德国家的盒子 */
+.city_Mondstad {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+
+/* 定义蒙德国家盒子的背景图 */
+.city_Mondstad_background_1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-position: center;
+    background-size: cover;
+    transform-origin: center;
+    animation: breath 80s infinite linear;
+    background: url(../images/Roles_Mondstadt_background_1.jpg) center/cover no-repeat;
+}
+
+.city_Mondstad_background_2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-position: center;
+    background-size: cover;
+    transform-origin: center;
+    animation: bg-change 15s infinite linear, breath 80s infinite linear;
+    opacity: 0;
+    background: url(../images/Roles_Mondstadt_background_2.jpg) center/cover no-repeat;
+}
+
+/* 实现背景图片的自动放大缩小 */
+@keyframes breath {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bg-change {
+    48% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    98% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 定义页面中间的斜线 */
+.role_city_body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../images/Roles_content_background.png)no-repeat;
+    background-position: center bottom;
+    background-size: auto 100vh;
+}
+
+/* 定义人物的元素logo */
+.role_Elemental {
+    position: absolute;
+    top: 10vh;
+    left: calc(50% - 60vh) !important;
+    width: auto;
+    height: 378px;
+    opacity: 0.1;
+}
+
+/* 定义中心人物盒子 */
+.role_content_img {
+    left: calc(50% - 63vh);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: auto;
+}
+
+/* 可用于基于一个或多个媒体查询的结果来应用样式表的一部分。
+使用它，你可以指定一个媒体查询和一个 CSS 块，当且仅当该媒体
+查询与正在使用其内容的设备匹配时，该 CSS 块才能应用于该文档 */
+@media screen and (max-height: 800px) {
+    .role {
+        height: 800px;
+    }
+
+    .role_city {
+        height: 800px;
+    }
+
+    .role_content_img {
+        left: calc(50% - 504px);
+        height: 800px;
+    }
+
+    .role_citys_role_message {
+        top: 144px;
+        left: calc(50% - 423px) !important;
+    }
+
+    .role_Elemental {
+        top: 68px;
+        left: calc(50% - 496px) !important;
+    }
+
+    .role_citys_role_sayings {
+        opacity: 0;
+    }
+}
+
+/* 定义页面中间人物的信息盒子 */
+.role_citys_role_message {
+    position: absolute;
+    z-index: 4;
+    top: 18vh;
+    left: calc(50% - 53vh);
+    width: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    text-align: justify;
+}
+
+/* 定义信息盒子内人物名称上面的横线 */
+.role_citys_role_message::before {
+    display: block;
+    content: "";
+    width: 180px;
+    height: 4px;
+    background-color: #e3bc8c;
+}
+
+/* 定义信息盒子内人物名称盒子 */
+.role_message_role_name {
+    margin-top: 20px;
+    width: 50vh;
+    height: auto;
+}
+
+/* 定义信息盒子内CV盒子 */
+.role_message_CV {
+    position: relative;
+    width: 330px;
+    height: 54px;
+    font-size: 24px;
+    color: #24333c;
+    line-height: 54px;
+    padding-left: 60px;
+    box-sizing: border-box;
+    background: #cca574 url(../images/Roles_CV_list_left_arrow.jfif) left no-repeat;
+    margin-top: -10px;
+    box-shadow: 2px 3px 6px 0 rgb(12 12 12 / 20%);
+    display: flex;
+}
+
+/* 定义CV盒子内播放声音按键 */
+.role_CV_saying {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: -5px;
+    right: -5px;
+    cursor: pointer;
+    background: url(../images/Roles_CV_right_say.png) center/cover no-repeat;
+}
+
+.role_CV_saying_now {
+    display: none;
+    cursor: auto;
+    background: url(../images/Roles_CV_right_saying.gif) center/cover no-repeat;
+ }
+
+/* 定义鼠标悬停CV盒子内播放声音按键时效果 */
+.role_CV_saying:first-child:hover {
+    background: url(../images/Roles_CV_right_say_hover.png) center/cover no-repeat;
+}
+
+
+/* 定义切换CV的盒子 */
+.role_message_CV_choose {
+    position: absolute;
+    top: 10px;
+    right: -120px;
+    width: 80px;
+    height: 32px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-sizing: content-box;
+}
+
+/* 定义切换CV内部的按钮 */
+.CV_choose_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 4px;
+    box-sizing: border-box;
+    background: rgba(18, 18, 18, 0.6);
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+/* 定义切换CV盒子内的圆形 */
+.CV_choose_box span {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #dbb17d;
+    color: #dbb17d;
+    font-size: 20px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.CV_choose_box span:first-child {
+    background: none;
+}
+
+/* 定义人物背景故事盒子 */
+.role_message_story {
+    width: 550px;
+    height: 150px;
+    display: flex;
+    max-height: 150px;
+    padding: 10px 0 10px 15px;
+    box-sizing: border-box;
+    background: rgba(1, 1, 1, 0.5);
+    font-size: 16px;
+    color: #fff;
+    margin-top: 17px;
+    line-height: 26px;
+}
+
+/* 定义人物背景故事盒子内的图标 */
+.role_message_story::before {
+    content: "";
+    width: 20px;
+    margin-top: 5px;
+    margin-right: 20px;
+    background: url(../images/Roles_message_icon.png) no-repeat;
+}
+
+/* 定义人物背景故事盒子内的文本盒子 */
+.message_story {
+    width: 455px;
+    padding: 0 35px 5px 3px;
+}
+
+
+/* 定义人物语录盒子 */
+.role_citys_role_sayings {
+    position: absolute;
+    top: 62vh;
+    left: calc(50% - 26vh);
+    transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+    transform: scale(1.2);
+    transform-origin: left center;
+}
+
+
+
+
+
+
+
+/* 定义页面底部的一层背景 */
+.role_bottom_background {
+    z-index: 4;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 79vh);
+    display: block;
+    width: 154vh;
+    height: 52vh;
+}
+
+
+
+
+
+
+
+/* 定义页面底部人物选择框盒子 */
+.role_choose_boxes {
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    height: 190px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(204, 204, 204, 0.2);
+}
+
+/* 定义页面底部人物选择框盒子接近页面底部的黑色图层 */
+.role_choose_boxes::before {
+    content: "";
+    width: 100%;
+    background: url(../images/Roles_bottom_black_background.png);
+    background-size: 100% 190px;
+}
+
+/* 定义页面底部人物选择框 */
+.role_choose_box {
+    position: absolute;
+    width: 1040px;
+    height: 131px;
+    top: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 定义页面底部人物选择框两边的箭头 */
+.role_choose_box::before {
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    width: 45px;
+    height: 64px;
+    left: 0;
+    background: url(../images/Roles_bottom_left_arrow.png);
+
+}
+
+.role_choose_box::after {
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    width: 45px;
+    height: 64px;
+    right: 0;
+    background: url(../images/Roles_bottom_right_arrow.png);
+
+}
+
+/* 定义定义页面底部人物选择框的选项 */
+.role_choose_box li {
+    cursor: pointer;
+    width: 110px;
+    height: 131px;
+    margin: 0 17px;
+    border-radius: 6px;
+    background-image: url(../images/Roles_bottom_roles_hover_background.png);
+}
+
+/* 定义定义页面底部人物选择框的选项的人物名字 */
+.choose_box_role_name {
+    color: #fff;
+    line-height: 22px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* 定义定义页面底部人物选择框的选项的人物图片 */
+.choose_box_role_img {
+    display: block;
+    margin: 2px auto 0;
+}
+
+/* 定义第一个人物选择框 */
+.role_choose_box li:first-child {
+    background-position: 0 -132px;
+}
+
+.role_choose_box li:first-child .choose_box_role_name {
+    color: #121212;
+}
+
+/* 定义鼠标悬停页面底部人物选择框的选项背景改变 */
+.choose_box:hover {
+    background-position: 0 -132px;
+}
+
+.choose_box:hover .choose_box_role_name {
+    color: #121212;
+}
+
+
+
+/* 定义角色页面导航栏盒子 */
+.role_lists {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 370px;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 187px;
+}
+
+/* 定义导航栏的垂直线 */
+.role_lists::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 800px;
+    top: 0;
+    left: 37px;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* 定义每个导航选项盒子 */
+.role_lists li {
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    box-sizing: border-box;
+    padding-left: 56px;
+    background: 18px center no-repeat;
+    background-image: url(../images/Roles_citys_lists_nohover.png);
+    background-size: 40px;
+    cursor: pointer;
+}
+
+/* 定义蒙德城盒子的背景改变 */
+.role_lists li:nth-child(1) {
+    padding-left: 70px;
+    background: left center no-repeat;
+    background-image: url(../images/Roles_citys_lists_hover.png);
+    background-size: contain;
+}

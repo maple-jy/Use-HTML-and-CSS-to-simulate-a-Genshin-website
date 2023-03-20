@@ -1,0 +1,171 @@
+/* 定义第一个导航键文字常亮 */
+.title_list:nth-child(5) {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+/* 定义导航键指示矩形 */
+.title_list_show {
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 430px;
+    background-color: rgb(105, 224, 255);
+    transition: all 0.2s ease-in-out 0s;
+    ;
+}
+
+/* 定义鼠标悬停时导航键矩形的移动 */
+.title_list:nth-child(1):hover~.title_list_show {
+    left: 30px;
+}
+
+.title_list:nth-child(2):hover~.title_list_show {
+    left: 130px;
+}
+
+.title_list:nth-child(3):hover~.title_list_show {
+    left: 230px;
+}
+
+.title_list:nth-child(4):hover~.title_list_show {
+    left: 330px;
+}
+
+.title_list:nth-child(6):hover~.title_list_show {
+    left: 530px;
+}
+
+
+
+
+
+
+/* 定义漫画页面盒子 */
+.caricature {
+    width: 100%;
+}
+
+/* 定义漫画顶部信息盒子 */
+.caricature_top {
+    height: 72vh;
+    position: relative;
+    background: transparent url(../images/Caricature_top_background.jpg) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+
+/* 定义信息盒子内的的内容盒子 */
+.caricature_top_box {
+    width: 606px;
+    height: 228px;
+    left: 118px;
+    bottom: 112px;
+    padding: 0 10px;
+    position: absolute;
+    color: #000;
+}
+
+/* 定义标题 */
+.top_box_title {
+    font-size: 36px;
+    margin-bottom: 13px;
+    line-height: 36px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 定义详细信息 */
+.top_box_message {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 23px;
+    font-weight: 600;
+}
+
+/* 定义按钮 */
+.top_box_btn {
+    width: 175px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #12b9e9;
+    font-size: 16px;
+    color: #fff;
+    opacity: .75;
+    line-height: 36px;
+    cursor: pointer;
+}
+
+
+
+/* 定义页面下部的漫画话数列表大盒子 */
+.caricature_bottom {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* 定义页面下部的漫画话数列表大盒子的背景 */
+.caricature_bottom::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../images/Caricature_bottom_background.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 定义漫画话数列表盒子 */
+.caricature_episode_lists {
+    width: 1280px;
+    padding-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 定义每一话的盒子 */
+.episode_number {
+    width: 300px;
+    height: 170px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin: 0 9px 23px 9px;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    cursor: pointer;
+}
+
+
+/* 定义每一话盒子的封面 */
+.episode_cover {
+    width: 100%;
+    height: 100%;
+    opacity: .75;
+    transition: all 0.5s 0s ease;
+}
+
+/* 定义每一话的名字 */
+.episode_name {
+    position: absolute;
+    width: 100%;
+    height: 36px;
+    bottom: 0;
+    background-color: #111;
+    opacity: .75;
+    color: #fff;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+}
+
+
+/* 定义鼠标悬停时，话数盒子的效果 */
+.episode_number:hover {
+    background-color: none;
+}
+
+.episode_number:hover .episode_cover {
+    opacity: 1;
+    transform: scale(1.2);
+}

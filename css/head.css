@@ -1,0 +1,139 @@
+/* 定义头部导航栏盒子 */
+.head {
+    width: 100%;
+    height: 66px;
+    display: flex;
+    background-color: rgba(17,17,17,0.85);
+    box-shadow: 0px 3px 7px 0px rgb(0 0 0 / 35%);
+    position: fixed;
+    z-index: 99;
+}
+
+/* 定义头部导航栏中的音乐控制和logo盒子 */
+.music_logo {
+    width: 362px;
+    height: 100%;
+    margin-left: 8px;
+    background-image: url(../images/原神logo3.png);
+    cursor: pointer;
+}
+
+/* 定义头部导航栏中音乐图片盒子 */
+.music_logo img {
+    width: 30px;
+    height: 30px;
+    margin: 18px 0 18px 62px;
+}
+
+/* 定义头部导航栏中的导航键盒子 */
+.title_lists {
+    width: auto;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin-left: -90px;
+    position: relative;
+}
+
+/* 定义头部导航栏中每个导航键盒子 */
+.title_lists a {
+    width: 40px;
+    right: 60px;
+    color: #ccc;
+    line-height: 66px;
+    font-size: 17px;
+    /* 文本两端对齐 配合伪类使用 */
+    text-align: justify;
+    /* 鼠标移入手指状态 */
+    cursor: pointer;
+    box-sizing: border-box;
+    margin: 0 30px;
+    /* 过渡效果 所有属性 时间  速度*/
+    transition: all 0.2s ease-in-out 0s;
+}
+
+/* 使导航键文字两边对齐 */
+.title_list::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+
+/* 定义鼠标悬停时导航键的突出显示 */
+.title_list:nth-child(1):hover {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+.title_list:nth-child(2):hover {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+.title_list:nth-child(3):hover {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+.title_list:nth-child(4):hover {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+.title_list:nth-child(5):hover {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+.title_list:nth-child(6):hover {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+/* 定义关爱系统和登录按钮盒子 */
+.system_login {
+    width: 262px;
+    height: 66px;
+    right: 40px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* 盒子与盒子之间间隔为30px */
+.system_box {
+    padding-right: 30px;
+}
+
+/* 定义两个小盒子的共同属性 */
+.right_box {
+    display: flex;
+    align-items: center;
+    color: #ccc;
+}
+
+/* 盒子与图片之间间隔为18px */
+.right_box div {
+    padding-right: 18px;
+}
+
+.right_box img {
+    /* 透明度 0~1 */
+    width: 27px;
+    height: 27px;
+    opacity: .6;
+}
+
+/* 鼠标悬停实现常亮 */
+.right_box:hover {
+    color: #fff;
+}
+
+.right_box:hover img {
+    /* 透明度 0~1 */
+    opacity: 1;
+}

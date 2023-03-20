@@ -1,0 +1,432 @@
+/* 定义第一个导航键文字常亮 */
+.title_list:nth-child(4) {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+/* 定义导航键指示矩形 */
+.title_list_show {
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 330px;
+    background-color: rgb(105, 224, 255);
+    transition: all 0.2s ease-in-out 0s;
+    ;
+}
+
+/* 定义鼠标悬停时导航键矩形的移动 */
+.title_list:nth-child(1):hover~.title_list_show {
+    left: 30px;
+}
+
+.title_list:nth-child(2):hover~.title_list_show {
+    left: 130px;
+}
+
+.title_list:nth-child(3):hover~.title_list_show {
+    left: 230px;
+}
+
+.title_list:nth-child(5):hover~.title_list_show {
+    left: 430px;
+}
+
+.title_list:nth-child(6):hover~.title_list_show {
+    left: 530px;
+}
+
+
+
+
+
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+/* 定义世界页面盒子 */
+.world_map {
+    width: 100%;
+    background-color: #69e0ff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.world_map_main {
+    position: relative;
+}
+
+
+
+/* 定义世界观介绍盒子 */
+.world_map_home {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/World_top_background.png) center/cover no-repeat;
+}
+
+/* 定义世界观介绍盒子的内容 */
+.home_content {
+    width: 800px;
+    margin: 0 auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home_content_name {
+    width: 41.8vh;
+    margin: 0 auto 2.4vh;
+}
+
+.content_name_list {
+    width: 52.9vh;
+    margin: 0 auto 2.4vh;
+}
+
+.home_content_text {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 12px rgba(110,159,193,0.36), 0 0 12px rgba(110,159,193,0.36);
+    line-height: 1.8;
+}
+
+.content_guide {
+    width: 500px;
+    height: 34px;
+    margin-top: 1vh;
+    font-size: 18px;
+    color: #fff;
+    line-height: 34px;
+    text-align: center;
+    text-shadow: 0 0 12px rgba(47,125,178,0.45), 0 0 12px rgba(47,125,178,0.45);
+    background: url(../images/World_top_citys_message_down_background.png) center/cover no-repeat;
+    cursor: pointer;
+}
+
+
+
+
+
+/* 定义世界观介绍盒子的按钮 */
+.home_button {
+    width: 52px;
+    height: 52px;
+    bottom: 8vh;
+    position: absolute;
+    background: url(../images/World_top_button_img_1.png) center/cover no-repeat;
+}
+
+.home_button::before {
+    content: "";
+    width: 98px;
+    height: 98px;
+    position: absolute;
+    left: -44%;
+    top: -44%;
+    animation: change 1s linear infinite;
+    background: url(../images/World_top_button_img_2.png) center/cover no-repeat;
+}
+
+.button_white_btn {
+    display: block;
+    width: 25px;
+    height: 13px;
+    bottom: 0;
+    left: 14px;
+    position: absolute;
+    animation: run 2s ease-in-out infinite;
+}
+
+@keyframes change {
+    0% {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes run {
+    0%, 100% {
+        transform: translate(0, -100%);
+    }
+    50% {
+        transform: translate(0, -50%);
+    }
+}
+
+
+
+
+
+
+/* 定义各个国家介绍盒子 */
+.world_map_country {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* 定义各个国家介绍盒子的背景 */
+.country_Mondstadt {
+    background: url(../images/World_Mondstadt_background.jpg) center/cover no-repeat;
+}
+.country_LiYue {
+    background: url(../images/World_LiYue_background.jpg) center/cover no-repeat;
+}
+.country_Lnazuma {
+    background: url(../images/World_Lnazuma_background.jpg) center/cover no-repeat;
+}
+.country_Sumeru {
+    background: url(../images/World_Sumeru_background.jpg) center/cover no-repeat;
+}
+
+/* 定义国家介绍盒子中的内容盒子 */
+.map_country_box {
+    top: 19vh;
+    width: 608px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map_country_icon {
+    width: 12vh;
+    height: 12vh;
+    top: 0;
+}
+
+.map_country_box_name {
+    color: #fff;
+    font-size: 4.6vh;
+    line-height: 9vh;
+    position: relative;
+}
+
+/* 定义国家介绍盒子中的内容盒子的国家名字两边的箭头 */
+.map_country_box_name::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 35.6vh;
+    height: 1.3vh;
+    left: 0;
+    transform: translate(calc(-100% - 3.5vh), -50%);
+    background: url(../images/World_citys_name_arrow.png) center/cover no-repeat;
+}
+
+.map_country_box_name::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 35.6vh;
+    height: 1.3vh;
+    right: 0;
+    transform: translate(calc(100% + 3.5vh), -50%) rotateY(180deg);
+    background: url(../images/World_citys_name_arrow.png) center/cover no-repeat;
+}
+
+
+/* 定义国家介绍盒子中的内容盒子的文本 */
+.map_country_box_text {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 26px;
+    margin-top: 20px;
+}
+
+.map_country_box_button {
+    margin-top: 9vh;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 31px;
+    height: 90px;
+    position: relative;
+    cursor: pointer;
+}
+
+.country_box_button_btn::before {
+    content: "";
+    width: 98px;
+    height: 98px;
+    position: absolute;
+    left: -38%;
+    top: -26%;
+    animation: change 1s linear infinite;
+    background: url(../images/World_citys_more-message_btn-img_2.png) center/cover no-repeat;
+}
+
+.country_box_button_btn_img {
+    width: 52px;
+    height: 52px;
+
+}
+
+
+
+
+
+
+
+
+/* 定义世界页面的滚动条盒子 */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+.world_map_scroll-bar {
+    position: fixed;
+    width: 5px;
+    height: 98%;
+    top: 1%;
+    right: 3px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .1);
+}
+
+.scroll-bar_drag {
+    height: 16.4vh;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    background: rgba(0,0,0,.5);
+    left: 0;
+    top: 0;
+    transition: all .3s ease-out;
+}
+
+
+
+
+
+/* 定义世界页面的导航边栏盒子 */
+.world_map_Navigation-bar {
+    position: fixed;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .5s ease-out;
+}
+
+.Navigation-bar_line {
+    position: absolute;
+    top: -4px;
+    right: 8px;
+    height: 40vh;
+    width: 2px;
+    background: rgba(255,255,255,0.2);
+}
+
+.Navigation-bar_line::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 25px;
+    top: -25px;
+    left: -102%;
+    background: url(../images/World_citys_Navigation-bar_ends.png) center/cover no-repeat;
+}
+
+.Navigation-bar_line::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 25px;
+    bottom: -25px;
+    left: -102%;
+    transform: rotateX(180deg);
+    background: url(../images/World_citys_Navigation-bar_ends.png) center/cover no-repeat;
+}
+
+
+/* 定义导航栏内的城市选项 */
+.Navigation-bar_list {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.Navigation-bar_list:last-child p {
+    opacity: 0.5;
+}
+
+.Navigation-bar_list p {
+    width: 70px;
+    height: 32px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 32px;
+    text-align: right;
+    padding: 0 12px;
+    margin-right: 10px;
+}
+
+.list_icon {
+    background: #fff;
+    transform: rotate(45deg) scale(0.3);
+    transition: all .4s ease;
+    width: 18px;
+    height: 18px;
+    transform-origin: 50%;
+}
+
+
+.country_Mondstadt:hover~.world_map_scroll-bar .scroll-bar_drag {
+    top: 16.4vh;
+}
+.country_LiYue:hover~.world_map_scroll-bar  .scroll-bar_drag {
+    top: 32.8vh;
+}
+.country_Lnazuma:hover~.world_map_scroll-bar  .scroll-bar_drag {
+    top: 49.2vh;
+}
+.country_Sumeru:hover~.world_map_scroll-bar  .scroll-bar_drag {
+    top: 65.6vh;
+}
+
+
+.world_map_home:hover~.world_map_Navigation-bar {
+    right: -400px;
+}
+
+.world_map_home:hover~.world_map_Navigation-bar .Navigation-bar_list:nth-child(2) p {
+    background-color: #fff;
+    color: #000;
+}
+
+.country_Mondstadt:hover~.world_map_Navigation-bar .Navigation-bar_list:nth-child(3) p {
+    background-color: #fff;
+    color: #000;
+ }
+
+.country_LiYue:hover~.world_map_Navigation-bar .Navigation-bar_list:nth-child(4) p {
+    background-color: #fff;
+    color: #000;
+}
+
+.country_Lnazuma:hover~.world_map_Navigation-bar .Navigation-bar_list:nth-child(5) p {
+    background-color: #fff;
+    color: #000;
+}
+
+.country_Sumeru:hover~.world_map_Navigation-bar .Navigation-bar_list:nth-child(6) p {
+    background-color: #fff;
+    color: #000;
+}

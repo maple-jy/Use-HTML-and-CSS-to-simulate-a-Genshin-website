@@ -1,0 +1,346 @@
+/* 定义头部导航栏 */
+/* 定义新闻导航键文字常亮 */
+.title_list:nth-child(2) {
+    color: #fff;
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+}
+
+/* 定义导航键指示矩形 */
+.title_list_show {
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 130px;
+    background-color: rgb(105, 224, 255);
+    transition: all 0.2s ease-in-out 0s;
+    ;
+}
+
+/* 定义鼠标悬停时导航键矩形的移动 */
+.title_list:nth-child(1):hover~.title_list_show {
+    left: 30px;
+}
+
+.title_list:nth-child(3):hover~.title_list_show {
+    left: 230px;
+}
+
+.title_list:nth-child(4):hover~.title_list_show {
+    left: 330px;
+}
+
+.title_list:nth-child(5):hover~.title_list_show {
+    left: 430px;
+}
+
+.title_list:nth-child(6):hover~.title_list_show {
+    left: 530px;
+}
+
+
+/* 定义新闻页面 */
+/* 新闻页面的主体部分 */
+.new_index {
+    max-height: 2170px;
+    min-height: 1240px;
+    position: relative;
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+/* 定义新闻页面的前置背景 */
+.new_index::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background: url(../images/new_top_background.jpg) center/cover no-repeat;
+}
+
+.content_news_body {
+    position: relative;
+    min-height: 1240px;
+    z-index: 2;
+}
+
+/* 定义内容主体内的推荐盒子 */
+.content_news_body_recommend {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: self-end;
+    justify-content: center;
+}
+
+/* 定义三个推荐盒子 */
+.recommend_box {
+    display: block;
+    position: relative;
+    width: 420px;
+    height: 450px;
+    background-color: rgba(18,18,18,0.8);
+    margin-right: 10px;
+    margin-bottom: 104px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 7px 0px rgb(0 0 0 / 35%);
+    opacity: .9;
+    cursor: pointer;
+}
+.recommend_box:last-child {
+    margin-right: 0;
+}
+
+
+/* 定义推荐盒子内的图片盒子 */
+.recommend_box_img {
+    width: 380px;
+    height: 190px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.recommend_box_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s 0s ease-out;
+}
+
+/* 定义鼠标悬停时图片放大 */
+.recommend_box:hover img {
+    transform: scale(1.2);
+}
+
+/* 定义推荐盒子内的文字盒子 */
+.recommend_box_title {
+    color: #fefefe;
+    font-size: 24px;
+    margin: 0 16px;
+    line-height: 34px;
+}
+
+/* 定义推荐盒子内的日期盒子 */
+.recommend_box_data {
+    position: absolute;
+    bottom: 16px;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.recommend_box_data span:first-child {
+    color: #808080;
+}
+.recommend_box_data span:last-child {
+    color: #ffc000;
+}
+
+
+
+
+
+
+
+/* 定义内容主体内的类别按钮盒子 */
+.content_news_body_category {
+    width: 1280px;
+    margin: 38px auto;
+    display: flex;
+}
+
+/* 定义四个类别按钮盒子 */
+.category_btn {
+    width: 155px;
+    height: 36px;
+    margin-right: 20px;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgba(57,59,64,0.18);
+    transition: all 0.2s 0s ease;
+    cursor: pointer;
+}
+
+.category_btn{
+    color: rgb(0 0 0);
+}
+
+.category_btn:nth-child(3) {
+    background-color: #393b40;
+}
+
+.category_btn:nth-child(3){color: #f4d8a8;}
+
+/* 定义鼠标悬浮时类别按钮发生变化 */
+.category_btn:hover {
+    background-color: #393b40;
+    color: #f4d8a8;
+}
+
+.category_btn:hover{color: #f4d8a8;}
+
+
+
+
+
+
+/* 定义内容主体内的新闻信息框盒子 */
+.content_news_body_news {
+    width: 1280px;
+    cursor: pointer;
+    margin: 0 auto;
+    height: auto;
+    transition: all 0.5s 0s ease;
+}
+
+.news_list {
+    width: 100%;
+    min-height: 170px;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* 定义内容主体内的新闻信息框盒子的边框 */
+.news_list::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+    border: 3px solid rgba(57,59,64,0.15);
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+
+/* 定义鼠标悬停时，整个盒子发生变化 */
+.news_list:hover {
+    background-color: #fff;
+}
+.news_list:hover::before {
+    opacity: 1;
+}
+
+/* 定义新闻信息小框内的图片盒子 */
+.news_list_img {
+    width: 265px;
+    height: 140px;
+    overflow: hidden;
+    background-color: #393b40;
+}
+
+/* 定义新闻信息小框内的图片盒子的图片 */
+.news_list_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 定义新闻信息小框内的文字标题盒子 */
+.news_list_title {
+    position: absolute;
+    top: 20px;
+    left: 305px;
+    font-size: 24px;
+}
+
+.news_list_line {
+    height: 40px;
+    margin: 40px 0 208px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    background-color: #393b40;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+.news_list_line:hover {
+    background-color: #565961;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 定义新闻信息小框内的日期盒子 */
+.news_list_data {
+    width: 160px;
+    bottom: 16px;
+    right: 20px;
+    position: absolute;
+    font-size: 14px;
+    color: #999;
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+}
+
+
+
+
+
+
+
+
+/* 定义新闻页面的后置背景 */
+.new_index::after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: -208px;
+    width: 100%;
+    height: 540px;
+    background: url(../images/new_bottom_background.jpg) center/cover no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+/* 定义新闻页面的快速置顶按钮盒子 */
+.content_news_btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    background: #fff url(../images/new_arrow_up.png) center/22px 24px no-repeat;
+    z-index: 999;
+    right: 54px;
+    bottom: 108px;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    box-shadow: 0px 0px 14px 0px rgb(18 18 18 / 4%);;
+}
